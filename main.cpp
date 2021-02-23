@@ -34,21 +34,21 @@ struct Comment
 
     static Comment FromJSON(const web::json::object & obj)
     {
-        unsigned int post_id = (unsigned int) obj.at(POST_ID).as_integer();
-        unsigned int id = (unsigned) obj.at(ID).as_integer();
-        std::string name = obj.at(NAME).as_string();
-        std::string email = obj.at(EMAIL).as_string();
-        std::string body = obj.at(BODY).as_string();
+        unsigned int post_id    = (unsigned int) obj.at(POST_ID).as_integer();
+        unsigned int id         = (unsigned) obj.at(ID).as_integer();
+        std::string name        = obj.at(NAME).as_string();
+        std::string email       = obj.at(EMAIL).as_string();
+        std::string body        = obj.at(BODY).as_string();
     }
 
     web::json::value AsJSON()
     {
         web::json::value result = web::json::value::object();
-        result[POST_ID] = web::json::value::number(post_id);
-        result[ID] = web::json::value::number(id);
-        result[NAME] = web::json::value::string(name);
-        result[EMAIL] = web::json::value::string(email);
-        result[BODY] = web::json::value::string(body);
+        result[POST_ID]         = web::json::value::number(post_id);
+        result[ID]              = web::json::value::number(id);
+        result[NAME]            = web::json::value::string(name);
+        result[EMAIL]           = web::json::value::string(email);
+        result[BODY]            = web::json::value::string(body);
         return result;
     }
 };
@@ -119,10 +119,10 @@ struct Post
     web::json::value AsJSON() const
     {
         web::json::value result = web::json::value::object();
-        result[USER_ID] = web::json::value::number(this->user_id);
-        result[ID] = web::json::value::number(this->id);
-        result[TITLE] = web::json::value::string(this->title);
-        result[BODY] = web::json::value::string(this->body);
+        result[USER_ID]         = web::json::value::number(this->user_id);
+        result[ID]              = web::json::value::number(this->id);
+        result[TITLE]           = web::json::value::string(this->title);
+        result[BODY]            = web::json::value::string(this->body);
         return result;
     }
 
